@@ -7,8 +7,7 @@
     <div class="col-8">
       <div class="card-body">
         <h5 class="card-title">{{ item.destination }}</h5>
-        <p class="card-text">Price: {{ item.price }}</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <p class="card-text">Price: {{ item.price }} $</p>
       </div>
     </div>
   </div>
@@ -18,17 +17,25 @@
 
   <table class="table table-dark" style="position: relative; left: 20vw; width: 60vw">
   
-    <tr>
-      <th scope="row">Price</th>
-      <td>{{ fullPrice }} $</td>
-    </tr>
-    <tr>
-      <th scope="row">Discount:</th>
-      <td>{{ Discount }} $</td>
-   </tr>
-    <tr>
-      <th scope="row">Price after discount:</th>
-      <td>{{ TotalPrice }} $</td>
- </tr>
-
-
+   
+      <ng-template [ngIf]="fullPrice>=200" [ngIfElse]="none">
+                <tr>
+                <th scope="row">Price</th>
+                <td>{{ fullPrice }} $</td>
+                </tr>
+                <tr>
+                <th scope="row">Discount:</th>
+                <td>{{ Discount }} $</td>
+                </tr>
+                 <tr>
+                 <th scope="row">Price after discount:</th>
+                 <td>{{ TotalPrice }} $</td>
+                </tr>
+        </ng-template>
+        <ng-template #none>
+                <tr>
+                <th scope="row">Price</th>
+                <td>{{ fullPrice }} $</td>
+                </tr>
+      
+ 
