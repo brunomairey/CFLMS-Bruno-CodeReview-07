@@ -6,11 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.sass']
 })
 export class HeroComponent implements OnInit {
-heroBtnUrl: string;
 
-  constructor() {
-this.heroBtnUrl ="https://codefactory.wien";
-   }
+
+  constructor() {  }
 
   ngOnInit() {
   	
