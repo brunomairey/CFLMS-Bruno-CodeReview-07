@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { BlogComponent} from './blog/blog.component';
 import { HomeComponent} from './home/home.component';
 import { TravelComponent} from './travel/travel.component';
-import { CaddieComponent} from './caddie/caddie.component';
+import { CartComponent} from './cart/cart.component';
+
 
 const routes: Routes = [
 {
@@ -25,7 +26,7 @@ const routes: Routes = [
 
 {
 
-        path:"caddie",component: CaddieComponent
+         path:"cart",component: CartComponent
 
 }
 ];

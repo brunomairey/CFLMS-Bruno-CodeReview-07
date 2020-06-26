@@ -12,6 +12,9 @@
 					 <p class="card-text">
 				{{x.startdate}}, {{x.duration}}<br>
 	          Now only for <b>{{x.price}} $</b></p>
+	           <div class="text-center">
+	           <button class="btn btn-secondary btn-lg" (click)="addToCart(x)">Buy this tour</button>
 	  	      </div>
+	  	  </div>
   </div>
 </div>

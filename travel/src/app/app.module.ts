@@ -7,8 +7,8 @@ import { HeroComponent } from './hero/hero.component';
 import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { TravelComponent } from './travel/travel.component';
-import { CaddieComponent } from './caddie/caddie.component';
 import { FooterComponent } from './footer/footer.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +17,8 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     BlogComponent,
     TravelComponent,
-    CaddieComponent,
-    FooterComponent
+     FooterComponent,
+     CartComponent
   ],
   imports: [
     BrowserModule,
