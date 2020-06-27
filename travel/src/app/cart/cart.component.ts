@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'cart',
@@ -19,6 +21,12 @@ TotalPrice;
   	 this.fullPrice = this.cartService.calculatePrice();
   	 this.Discount = this.cartService.calculateDiscount();
   	 this.TotalPrice = this.cartService.calculateTotalPrice();
-  }
+  };
+
+youorder(){
+  console.log("toto");
+      document.getElementById("yourorder").innerHTML="Your order for a price of " + this.TotalPrice + " $ has been submitted";
+      document.getElementById("displaycards").innerHTML="";
+   }
 
 }

@@ -1,3 +1,4 @@
+<div id="displaycards">
 <div class="cart-item" *ngFor="let item of items"> 
 <div class="card mb-3" style="width: 60vw; position: relative; left: 20vw">
   <div class="row no-gutters">
@@ -16,8 +17,7 @@
 
 
   <table class="table table-dark" style="position: relative; left: 20vw; width: 60vw">
-  
-   
+     
       <ng-template [ngIf]="fullPrice>=200" [ngIfElse]="none">
                 <tr>
                 <th scope="row">Price</th>
@@ -31,11 +31,26 @@
                  <th scope="row">Price after discount:</th>
                  <td>{{ TotalPrice }} $</td>
                 </tr>
-        </ng-template>
+              </ng-template>
         <ng-template #none>
                 <tr>
                 <th scope="row">Price</th>
                 <td>{{ fullPrice }} $</td>
                 </tr>
-      
+         </ng-template>
+</table>
+
+<div class="mx-5 my-3" style="position: relative; left: 45vw; width: 10vw">
+
+     <button type="submit" (click)="youorder()" class="btn btn-secondary" style="width: 15vw">Order</button>
+</div>
+</div>
+ <div class="mx-5 my-3" id="yourorder" style="position: relative; left: 10vw"></div>
+  
+
+
+       
+
+
+        
  
