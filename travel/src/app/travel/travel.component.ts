@@ -10,6 +10,7 @@ import { CartService } from '../cart.service';
 export class TravelComponent implements OnInit {
 	products = travelentry;
 	product;
+  quantity;
   constructor(private cartService: CartService) { }
 
 addToCart(x) {
@@ -17,8 +18,14 @@ addToCart(x) {
    this.cartService.addToCart(x);
  }
 
+upQuantity(x) {x.quantity++;}
+
+downQuantity(x) {
+ if (x.quantity != 0) x.quantity--;
+}
 
   ngOnInit() {
+    this.quantity
   }
 
 }

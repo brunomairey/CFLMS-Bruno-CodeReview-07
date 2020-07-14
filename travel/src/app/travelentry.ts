@@ -6,6 +6,7 @@ export const travelentry = [
 		duration: "all day",
 		price:100,
 		img:"../assets/routamuerte.JPG",
+		quantity:1,
 		
 			},{
 		destination:"Termal Bath",
@@ -14,7 +15,7 @@ export const travelentry = [
 		duration: "1 hour",
 		price:50,
 		img:"../assets/termalbath.JPG",
-		
+		quantity:1,
 	},{
 		destination:"Pico Austria",
 		description: "Enjoy this trek where you will reach the altitude of 5320 meters, be carefull with the oxygen. Good physical conditions is expected to do this trip.",
@@ -22,7 +23,7 @@ export const travelentry = [
 		duration: "all day",
 		price:90,
 		img:"../assets/trek.JPG",
-		
+		quantity:1,
 	},{
 		destination:"Uyuni Salar",
 		description: "Our driver will bring you in one of the most famous place of Bolivia. The Uyuni Salar. Be carefull, you have to be awake before the sun rise if you want to enjoy the most of it",
@@ -30,6 +31,6 @@ export const travelentry = [
 		duration: "4 days",
 		price:550,
 		img:"../assets/uyuni.JPG",
-		
+		quantity:1,
 	},
 ];

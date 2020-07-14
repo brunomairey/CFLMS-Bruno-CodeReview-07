@@ -5,11 +5,24 @@ import { Injectable } from '@angular/core';
 })
 export class CartService {
 items = [];
+
   constructor() { }
 
+
+
 addToCart(x) {
-   this.items.push(x);
- }
+    if(x.quantity == 0){
+      x.quantity = x.quantity;
+     this.items.push(x);
+     console.log("whaetever");
+    } else {
+      for(let item of this.items){
+        (x.destination == item.destination) ? item.quantity++ : null ;
+        console.log("toto");
+      }
+    }
+    console.table(this.items);
+  };
 
  getItems() {
    return this.items;
@@ -20,25 +33,5 @@ addToCart(x) {
    return this.items;
  }
 
- calculatePrice(){
-      let calcPrice: number = 0;
-     for(let item of this.items){
-        calcPrice += item.price;
-      }
-      return calcPrice;
-      
-    }
-         
-calculateDiscount(){
-     let Discount: number= this.calculatePrice();
-      if ( Discount >= 200 && Discount < 500) {Discount=Discount*0.1}
-      else if ( Discount >= 500) {Discount=Discount*0.2} 
-      else {Discount=0} 
-      return Discount;}
- 
- calculateTotalPrice(){
-let Totalprice: number= this.calculatePrice()-this.calculateDiscount();
-    return Totalprice;
- }
 
 }
