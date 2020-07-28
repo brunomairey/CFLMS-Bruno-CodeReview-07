@@ -1,5 +1,5 @@
 <div id="displaycards">
-<div class="cart-item" *ngFor="let item of items"> 
+<div class="cart-item" *ngFor="let item of items; index as i"> 
 <div class="card mb-3" style="width: 60vw; position: relative; left: 20vw">
   <div class="row no-gutters">
     <div class="col-4">
@@ -11,7 +11,7 @@
         <p class="card-text">Price: {{ item.price }} $</p>
         <div class="select-quantity">
               Persons:
-              <button class="decrease" (click)="downQuantity(item)">-</button>
+              <button class="decrease" (click)="downQuantity(item,i)">-</button>
               <input class="number" type="text" [value]="item.quantity"(input)="item.quantity = $event.target.value" style="width: 2vw">
         <button class="increase" (click)="upQuantity(item)">+</button>
              </div>

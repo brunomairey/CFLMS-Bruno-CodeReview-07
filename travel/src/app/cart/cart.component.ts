@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
@@ -8,8 +8,8 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.sass']
 })
-export class CartComponent implements OnInit {
-items;
+export class CartComponent implements OnInit, DoCheck {
+  items;
 fullPrice;
 Discount;
 TotalPrice;
@@ -18,20 +18,33 @@ quantity;
 
 
   ngOnInit() {
-  	this.items = this.cartService.getItems();
-  	  this.fullPrice = this.calculatePrice();
-  	  this.Discount = this.calculateDiscount();
-  	  this.TotalPrice = this.calculateTotalPrice();
+  	// this.items = this.cartService.getItems();
+  	  
+  	//   this.Discount = this.calculateDiscount();
+  	//   this.TotalPrice = this.calculateTotalPrice();
      };
 
+ngDoCheck() {
+  this.items = this.cartService.items;
+this.fullPrice = this.calculatePrice();
+ this.Discount = this.calculateDiscount();
+ this.TotalPrice = this.calculateTotalPrice();
+}
 upQuantity(item) {item.quantity++;
 this.calculatePrice();
  this.calculateDiscount();
- this.calculateTotalPrice();}
+ this.calculateTotalPrice();
+}
 
-downQuantity(item) {
- if (item.quantity != 0) item.quantity--;
- this.calculatePrice();
+downQuantity(item,i) {
+ if (item.quantity == 1) {
+   item.quantity--;
+   this.items.splice(i,1);
+   }
+ else {
+   item.quantity--;
+ }
+ // this.calculatePrice();
 
 }
 
@@ -48,7 +61,7 @@ calculatePrice(){
     }
          
 calculateDiscount(){
-     let Discount: number= this.calculatePrice();
+     let Discount: number= this.fullPrice;
       if ( Discount >= 200 && Discount < 500) {Discount=Discount*0.1}
       else if ( Discount >= 500) {Discount=Discount*0.2} 
       else {Discount=0} 
